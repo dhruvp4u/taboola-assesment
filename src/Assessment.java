@@ -1,5 +1,3 @@
-import java.util.HashMap;
-
 public class Assessment {
     public static Integer stringToInteger(String input) throws Exception {
         // for storing the output
@@ -10,7 +8,7 @@ public class Assessment {
         if(input.charAt(0) == '-'){
             i = 1;
             positive = false;
-        }
+        }else if(input.charAt(0) == '+') i = 1;
 
         // loop though the string and create the integer
         for(; i<input.length(); i++){
@@ -36,8 +34,8 @@ public class Assessment {
     }
 
     public static void main(String[] args) throws Exception {
-        String[] string_to_integer_inputs = new String[] {"1230", "-123", "666", "9999"};
-        String[] has_integer_inputs = new String[] {"123", "-123", "66B", "999A", "Hi", "IAMGOOD"};
+        String[] string_to_integer_inputs = new String[] {"1230", "-123", "666", "9999", "+6156", "00012", "-056"};
+        String[] has_integer_inputs = new String[] {"123", "-123", "66B", "999A", "Hi", "IAMGOOD", "This Is A Test4me"};
 
         System.out.println("******** String to Integer *********");
         for(String input: string_to_integer_inputs){
@@ -48,6 +46,5 @@ public class Assessment {
         for(String input: has_integer_inputs){
             System.out.println(input + " --> " + hasInteger(input));
         }
-
     }
 }
